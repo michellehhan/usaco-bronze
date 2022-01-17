@@ -1,0 +1,35 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main(){
+    freopen("cowsignal.in", "r", stdin);
+    freopen("cowsignal.out", "w", stdout);
+
+    // problem asks to dilate a symbol by k
+    // where m & n are the dimensions of symbol
+    // to dilate 2x, print every twice as long
+    // and repeat every line twice
+
+    int m,n,k;
+    cin >> m >> n >> k;
+    // setting up variables here ^
+
+    for (int i=0; i<m; i++){
+        // saving every line 
+        string line; cin >> line;
+        // make a variable for dilated line
+        string outputLine;
+        // for every character on that line,
+        for(int j=0; j<n; j++){
+            // we're adding it on to output line k times
+            for (int b=0; b<k; b++){
+                outputLine += line[j];
+            }
+        }
+        // once we have output line, we're printing it k times
+        for(int j=0; j<k; j++){
+            cout << outputLine << endl;
+        }
+    }
+}
+    
